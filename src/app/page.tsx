@@ -1,6 +1,18 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import type { InferGetStaticPropsType, GetStaticProps } from 'next';
 
-export default function Home() {
+export const getStaticProps: GetStaticProps<{
+  repo: any;
+}> = async () => {
+  const res = await fetch('https://restcountries.com/v3.1/all');
+  const repo = await res.json();
+  return { props: { repo } };
+};
+
+export default function Home({
+  repo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(repo);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -109,5 +121,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
