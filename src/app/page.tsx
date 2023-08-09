@@ -6,8 +6,12 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <Filter />
-      <CountriesList />
+      <main>
+        <section className="px-20 py-8">
+          <Filter />
+          <CountriesList />
+        </section>
+      </main>
     </>
   );
 }

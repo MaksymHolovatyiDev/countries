@@ -1,10 +1,10 @@
 import CountryListItem from './CountriesListItem';
 import { getAllCountries } from '@helpers/getCountries';
 
-export default async function CountriesListItemType() {
-  const data = await getAllCountries();
+export default async function CountriesListItemType({ countries }: any) {
+  const data = countries ? countries : await getAllCountries();
   return (
-    <ul>
+    <ul className="grid gap-12 grid-cols-4">
       {data.map((el: any) => (
         <CountryListItem data={el} />
       ))}
