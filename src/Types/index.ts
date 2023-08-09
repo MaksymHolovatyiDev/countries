@@ -17,11 +17,18 @@ export type CountryListItemType = {
 };
 
 export type ParamsTypes = {
-  params: { id: string },
-  searchParams: {}
-}
-
+  params: { id: string };
+  searchParams: {};
+};
 
 export type PathType = {
   path: string;
-}
+};
+
+export type CurrentCountryProfileType = {
+  data: any;
+};
+
+export type BorderCountriesBtnsType = {
+  countries: string[];
+};
