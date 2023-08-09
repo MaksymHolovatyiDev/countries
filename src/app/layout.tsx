@@ -1,8 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Nunito_Sans({
+  weight: ['300', '600', '800'],
+  style: ['normal'],
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Where in the world?',

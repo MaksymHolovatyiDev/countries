@@ -1,8 +1,9 @@
 import { PathType } from '@Types';
 import { getCountry } from '@helpers/getCountries';
+import CurrentCountryProfile from './CurrentCountryProfile';
 
-export default async function CurrentCountryProfile({ path }: PathType) {
+export default async function CurrentCountry({ path }: PathType) {
   const data = await getCountry(path);
-  console.log(data);
-  return <div>{data.name.common}</div>;
+
+  return <CurrentCountryProfile data={data[0]} />;
 }
