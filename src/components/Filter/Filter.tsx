@@ -1,16 +1,27 @@
-import CustomInput from './CustomInput';
+import { useState } from 'react';
 
-export default function Filter() {
+import CustomInput from './CustomInput';
+import CustomSelect from './CustomSelect';
+
+export default function Filter({
+  setCountries,
+  countries,
+  serFilteredCountries,
+}: any) {
+  const [region, setRegion] = useState('');
+
   return (
     <div className="mb-8 flex lg:flex-col justify-between ">
-      <CustomInput />
-      <select className="lg:w-2/4">
-        <option value={'Africa'}>Africa</option>
-        <option value={'America'}>America</option>
-        <option value={'Asia'}>Asia</option>
-        <option value={'Europe'}>Europe</option>
-        <option value={'Oceania'}>Oceania</option>
-      </select>
+      <CustomInput
+        serFilteredCountries={serFilteredCountries}
+        countries={countries}
+        region={region}
+      />
+      <CustomSelect
+        setCountries={setCountries}
+        setRegion={setRegion}
+        region={region}
+      />
     </div>
   );
 }

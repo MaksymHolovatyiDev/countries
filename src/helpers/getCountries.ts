@@ -29,6 +29,18 @@ export async function getCountriesByCodes(id: string) {
     `https://restcountries.com/v3.1/alpha?codes=${id}&fields=name`
   );
 
+  if (!res.ok) return [];
+
+  const data = await res.json();
+
+  return data;
+}
+
+export async function SearchRegionCountries(region: string) {
+  if (!region) return getAllCountries();
+
+  const res = await fetch(`https://restcountries.com/v3.1/region/${region}`);
+
   if (!res.ok) throw new Error('Failed to fetch data');
 
   const data = await res.json();

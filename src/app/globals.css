@@ -89,3 +89,11 @@ body {
 .container-wrap {
   overflow-wrap: break-word;
 }
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none;
+}

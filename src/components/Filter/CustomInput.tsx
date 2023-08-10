@@ -1,8 +1,27 @@
-'use client';
+import { useEffect, useState } from 'react';
 
-export default function CustomInput() {
-  const findCountry = (evt: any) => {
-    console.log(evt.target.value);
+export default function CustomInput({
+  countries,
+  serFilteredCountries,
+  region,
+}: any) {
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    const filteredCountries = countries.filter((el: any) =>
+      el.name.common.toUpperCase().includes(text.toUpperCase())
+    );
+
+    serFilteredCountries(text ? filteredCountries : null);
+  }, [region, countries]);
+
+  const filterByRegion = (evt: any) => {
+    setText(evt.target.value);
+    const filteredCountries = countries.filter((el: any) =>
+      el.name.common.toUpperCase().includes(evt.target.value.toUpperCase())
+    );
+
+    serFilteredCountries(evt.target.value ? filteredCountries : null);
   };
 
   return (
@@ -26,7 +45,8 @@ export default function CustomInput() {
         type="text"
         placeholder="Search for a country..."
         className="h-12 lg:w-full lg:mb-6 w-my pl-16 text-dark-gray rounded outline-none"
-        onChange={findCountry}
+        value={text}
+        onChange={filterByRegion}
       />
     </label>
   );
