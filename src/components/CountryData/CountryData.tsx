@@ -10,8 +10,8 @@ export default function CountryData({ data }: CurrentCountryProfileType) {
   }, []);
 
   return (
-    <div className="flex justify-between">
-      <div>
+    <div className="flex lg:flex-col lg:space-y-10 justify-between">
+      <div className="lg:space-y-2">
         <p>
           <span className="font-extrabold">Native name:</span>{' '}
           {(Object.values(data.name.nativeName)[0] as any).common}
@@ -30,7 +30,7 @@ export default function CountryData({ data }: CurrentCountryProfileType) {
         </p>
       </div>
 
-      <div>
+      <div className="lg:space-y-2">
         <p>
           <span className="font-extrabold">Top level domain:</span>{' '}
           {data.tld.join(', ')}

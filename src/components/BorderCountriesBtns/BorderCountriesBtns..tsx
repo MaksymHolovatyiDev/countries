@@ -9,8 +9,10 @@ export default async function BorderCountriesBtns({
   const data = await getCountriesByCodes(countries.join(','));
 
   return (
-    <div className="mt-16 cust-grid gap-6">
-      <p className="font-extrabold sidebar pt-3">Border Countries:</p>
+    <div className="mt-16 lg:block cust-grid gap-6">
+      <p className="font-extrabold sidebar lg:pt-0 lg:mb-4 pt-3">
+        Border Countries:
+      </p>
       <ul className="grid gtc gap-8 items-center content">
         {data.map((el: any) => (
           <li key={el.name.official}>

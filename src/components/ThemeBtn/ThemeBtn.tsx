@@ -1,14 +1,14 @@
 export default function ThemeBtn() {
   return (
-    <label className="flex">
-      <input type="checkbox" />
+    <label className="lg:text-base flex cursor-pointer hover:text-dark-gray">
+      <input type="checkbox" className="checkbox-color hidden" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="lg:w-5 lg:h-5  w-6 h-6 stroke-very-dark-blue"
       >
         <path
           strokeLinecap="round"

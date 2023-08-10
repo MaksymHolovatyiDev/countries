@@ -8,7 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        lg: { max: '1023px' },
+      },
       colors: {
+        'very-dark-blue': 'var(--very-dark-blue)',
         'dark-gray': 'var(--dark-gray)',
       },
       backgroundImage: {

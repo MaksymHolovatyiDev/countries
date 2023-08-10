@@ -8,7 +8,7 @@ export default function Country({ params }: ParamsTypes) {
     <>
       <Header />
       <main>
-        <section className="px-20 py-8">
+        <section className="lg:px-10 px-20 py-8">
           <BackBtn />
           <CurrentCountry path={params.id} />
         </section>
