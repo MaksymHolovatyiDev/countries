@@ -25,14 +25,14 @@ export default function CustomInput({
   };
 
   return (
-    <label className="relative">
+    <label className="relative shadow">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-5 absolute lg:top-6 top-2/4 left-4 tr-y stroke-dark-gray"
+        className="w-5 h-5 absolute lg:top-6 top-2/4 left-4 tr-y stroke-dark-gray dark:stroke-white"
       >
         <path
           strokeLinecap="round"
@@ -44,7 +44,7 @@ export default function CustomInput({
       <input
         type="text"
         placeholder="Search for a country..."
-        className="h-12 lg:w-full lg:mb-6 w-my pl-16 text-dark-gray rounded outline-none"
+        className="h-12 lg:w-full lg:mb-6 w-my pl-16 text-dark-gray rounded outline-none dark:bg-dark-blue dark:text-white"
         value={text}
         onChange={filterByRegion}
       />

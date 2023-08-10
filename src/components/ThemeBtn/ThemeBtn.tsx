@@ -1,14 +1,33 @@
-export default function ThemeBtn() {
+'use client';
+
+import { useEffect } from 'react';
+
+export default function ThemeBtn({ theme, setTheme }: any) {
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const getTheme = (evt: any) => {
+    const newTheme = evt.target.checked ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
   return (
     <label className="lg:text-base flex cursor-pointer hover:text-dark-gray">
-      <input type="checkbox" className="checkbox-color hidden" />
+      <input
+        type="checkbox"
+        className="checkbox-color hidden"
+        defaultChecked={theme === 'dark' ? true : false}
+        onClick={getTheme}
+      />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="lg:w-5 lg:h-5  w-6 h-6 stroke-very-dark-blue"
+        className="lg:w-5 lg:h-5  w-6 h-6 stroke-very-dark-blue mr-2"
       >
         <path
           strokeLinecap="round"

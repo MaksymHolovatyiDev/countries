@@ -8,9 +8,9 @@ export default function CustomSelect({ setCountries, region, setRegion }: any) {
   };
 
   return (
-    <div className="relative lg:w-2/4 w-44">
+    <div className="relative lg:w-2/4 w-44 shadow">
       <select
-        className=" lg:text-sm w-full h-12 pl-4 font-semibold rounded outline-0 custom-select"
+        className=" lg:text-sm w-full h-12 pl-4 font-semibold rounded outline-0 custom-select dark:bg-dark-blue"
         onChange={searchByRegion}
         value={region}
       >

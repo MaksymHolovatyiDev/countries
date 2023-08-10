@@ -1,13 +1,6 @@
-'use client';
-
-import { useEffect } from 'react';
-
 import { CurrentCountryProfileType } from '@Types';
 
 export default function CountryData({ data }: CurrentCountryProfileType) {
-  useEffect(() => {
-    document.body.style.backgroundColor = 'white';
-  }, []);
 
   return (
     <div className="flex lg:flex-col lg:space-y-10 justify-between">

@@ -25,6 +25,9 @@
   .content {
     grid-area: content;
   }
+  button.dark {
+    background-color: var(--dark-blue);
+  }
 }
 
 @layer base {
@@ -55,27 +58,22 @@
 - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
 
 :root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-dm: hsl(207, 26%, 17%);
   --very-dark-blue: hsl(200, 15%, 8%);
   --very-light-gray: hsla(0, 0%, 52%, 0.1);
   --dark-gray: hsl(0, 0%, 52%);
   --white: hsl(0, 0%, 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --very-dark-blue: hsl(207, 26%, 17%);
-  }
-
-  body {
-    color: var(--white);
-    background: var(--very-dark-blue);
-  }
-}
-
 body {
   color: var(--very-dark-blue);
-  background: var(--very-light-gray);
+  background: var(--white);
+}
+
+body.dark {
+  background: var(--very-dark-blue-dm);
+  color: var(--white);
 }
 
 .interact-shadow:hover > div {
@@ -83,7 +81,7 @@ body {
 }
 
 .checkbox-color:checked + svg {
-  stroke: red;
+  stroke: var(--white);
 }
 
 .container-wrap {
