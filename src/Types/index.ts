@@ -1,19 +1,21 @@
-export type CountryListItemType = {
-  data: {
-    flags: {
-      png: string;
-      svg: string;
-      alt: string;
-    };
-    name: {
-      common: string;
-      official: string;
-      nativeName: any;
-    };
-    capital: string[];
-    region: string;
-    population: number;
+export type CountryListType = {
+  flags: {
+    png: string;
+    svg: string;
+    alt: string;
   };
+  name: {
+    common: string;
+    official: string;
+    nativeName: any;
+  };
+  capital: string[];
+  region: string;
+  population: number;
+};
+
+export type CountryListItemType = {
+  data: CountryListType;
 };
 
 export type ParamsTypes = {
@@ -33,18 +35,41 @@ export type BorderCountriesBtnsType = {
   countries: string[];
 };
 
+export type NameType = {
+  name: string;
+};
+
+export type CommonName = {
+  common: string;
+};
+
+export type BorderCountriesBtnsRes = {
+  name: {
+    common: string;
+    official: string;
+  };
+};
+
+export type BorderCountriesBtnsResArr = {
+  data: BorderCountriesBtnsRes[];
+};
+
+export type ClassNameType = {
+  className: string
+}
+
 ///////////////////////////////////   interface   ////////////////////////////////
 
 export interface ThemeContextValue {
   theme: string;
-  setTheme: any;
+  setTheme: (theme: string) => void;
 }
 
 export interface FilterContextValue {
   isLoading: boolean;
-  countries: any[];
-  filteredCountries: any[] | null;
-  setRegion: any;
+  countries: CountryListType[];
+  filteredCountries: CountryListType[] | null;
+  setRegion: (region: string) => void;
   region: string;
-  setFilteredCountries: any;
+  setFilteredCountries: (filter: any) => void;
 }

@@ -1,4 +1,6 @@
-export default function SearchSvg() {
+import { ClassNameType } from '@Types';
+
+export default function SearchSvg({ className }: ClassNameType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +8,7 @@ export default function SearchSvg() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-5 h-5 absolute lg:top-6 top-2/4 left-4 tr-y stroke-dark-gray dark:stroke-white"
+      className={className}
     >
       <path
         strokeLinecap="round"

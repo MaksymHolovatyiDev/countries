@@ -1,4 +1,6 @@
-export default function BackSvg() {
+import { ClassNameType } from '@Types';
+
+export default function BackSvg({ className }: ClassNameType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +8,7 @@ export default function BackSvg() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 mr-1"
+      className={className}
     >
       <path
         strokeLinecap="round"

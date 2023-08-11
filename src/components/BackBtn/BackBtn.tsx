@@ -12,7 +12,7 @@ export default function BackBtn() {
       onClick={() => router.back()}
       className="mb-12 w-28 h-10 shadow-lg rounded flex justify-center items-center hover:bg-gray-200 focus:bg-gray-20 transition dark:bg-dark-blue dark:hover:bg-black dark:focus:bg-black"
     >
-      <BackSvg />
+      <BackSvg className="w-6 h-6 mr-1" />
       Back
     </button>
   );

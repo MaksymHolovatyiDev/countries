@@ -1,9 +1,10 @@
+import { BorderCountriesBtnsRes, BorderCountriesBtnsResArr } from '@Types';
 import Link from 'next/link';
 
-export default function BorderCountriesBtnsList({ data }: any) {
+export default function BorderCountriesBtnsList({ data }: BorderCountriesBtnsResArr) {
   return (
     <ul className="grid gtc gap-8 items-center content">
-      {data.map((el: any) => (
+      {data.map((el: BorderCountriesBtnsRes) => (
         <li key={el.name.official}>
           <Link
             href={`/${el.name.official}`}

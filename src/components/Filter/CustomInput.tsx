@@ -1,22 +1,24 @@
+import { useEffect, useState } from 'react';
+
+import { CountryListType } from '@Types';
 import SearchSvg from '@assets/icons/SearchSvg';
 import { useFilter } from '@components/FilterProvider/FilterProvider';
-import { useEffect, useState } from 'react';
 
 export default function CustomInput() {
   const [text, setText] = useState('');
   const { countries, region, setFilteredCountries } = useFilter();
 
   useEffect(() => {
-    const filteredCountries = countries.filter((el: any) =>
+    const filteredCountries = countries.filter((el: CountryListType) =>
       el.name.common.toUpperCase().includes(text.toUpperCase())
     );
 
     setFilteredCountries(text ? filteredCountries : null);
   }, [region, countries]);
 
-  const filterByRegion = (evt: any) => {
+  const filterByRegion = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setText(evt.target.value);
-    const filteredCountries = countries.filter((el: any) =>
+    const filteredCountries = countries.filter((el: CountryListType) =>
       el.name.common.toUpperCase().includes(evt.target.value.toUpperCase())
     );
 
@@ -25,7 +27,7 @@ export default function CustomInput() {
 
   return (
     <label className="relative shadow">
-      <SearchSvg />
+      <SearchSvg className="w-5 h-5 absolute lg:top-6 top-2/4 left-4 tr-y stroke-dark-gray dark:stroke-white" />
 
       <input
         type="text"

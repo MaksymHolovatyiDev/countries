@@ -2,10 +2,12 @@ import CrossSvg from '@assets/icons/CrossSvg';
 import { useFilter } from '@components/FilterProvider/FilterProvider';
 
 export default function CustomSelect() {
-  const {region, setRegion}=useFilter();
+  const { region, setRegion } = useFilter();
 
-  const searchByRegion = (evt: any) => {
-    const data = evt ? evt.target.value : evt;
+  const searchByRegion = (
+    evt: React.ChangeEvent<HTMLSelectElement> | string
+  ) => {
+    const data = typeof evt !== 'string' ? evt.target.value : evt;
     setRegion(data);
   };
 
@@ -42,7 +44,7 @@ export default function CustomSelect() {
         style={{ display: region ? 'block' : 'none' }}
         onClick={() => searchByRegion('')}
       >
-        <CrossSvg />
+        <CrossSvg className="w-4 h-4" />
       </button>
     </div>
   );

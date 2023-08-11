@@ -6,7 +6,7 @@ import { useTheme } from '@components/ThemeProvider/ThemeProvider';
 export default function ThemeBtn() {
   const { theme, setTheme } = useTheme();
 
-  const getTheme = (evt: any) => {
+  const getTheme = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const newTheme = evt.target.checked ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
@@ -18,9 +18,9 @@ export default function ThemeBtn() {
         type="checkbox"
         className="checkbox-color hidden"
         defaultChecked={theme === 'dark' ? true : false}
-        onClick={getTheme}
+        onChange={getTheme}
       />
-      <MoonSvg />
+      <MoonSvg className="lg:w-5 lg:h-5  w-6 h-6 stroke-very-dark-blue mr-2" />
       Dark Mode
     </label>
   );

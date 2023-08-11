@@ -1,4 +1,6 @@
-export default function MoonSvg() {
+import { ClassNameType } from '@Types';
+
+export default function MoonSvg({ className }: ClassNameType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +8,7 @@ export default function MoonSvg() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="lg:w-5 lg:h-5  w-6 h-6 stroke-very-dark-blue mr-2"
+      className={className}
     >
       <path
         strokeLinecap="round"

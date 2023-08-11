@@ -1,9 +1,9 @@
 import {
-    createContext,
-    useContext,
-    ReactNode,
-    useEffect,
-    useState,
+  createContext,
+  useContext,
+  ReactNode,
+  useEffect,
+  useState,
 } from 'react';
 
 import { FilterContextValue } from '@Types';

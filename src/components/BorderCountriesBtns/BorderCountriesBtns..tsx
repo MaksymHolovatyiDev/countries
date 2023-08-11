@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { getCountriesByCodes } from '@helpers/getCountries';
-import { BorderCountriesBtnsType } from '@Types';
+import { BorderCountriesBtnsRes, BorderCountriesBtnsType } from '@Types';
 import ShowSpinner from '@components/ShowSpinner/ShowSpinner';
 import BorderCountriesBtnsList from '@components/BorderCountriesBtnsList/BorderCountriesBtnsList';
 
 export default function BorderCountriesBtns({
   countries,
 }: BorderCountriesBtnsType) {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<BorderCountriesBtnsRes[]>();
 
   useEffect(() => {
     getCountriesByCodes(countries.join(',')).then(setData);
@@ -20,7 +20,7 @@ export default function BorderCountriesBtns({
         Border Countries:
       </p>
       <ShowSpinner show={!data}>
-        <BorderCountriesBtnsList data={data} />
+        <BorderCountriesBtnsList data={data!} />
       </ShowSpinner>
     </div>
   );
