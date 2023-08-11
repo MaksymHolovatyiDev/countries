@@ -1,10 +1,12 @@
-import { SearchRegionCountries } from '@helpers/getCountries';
+import CrossSvg from '@assets/icons/CrossSvg';
+import { useFilter } from '@components/FilterProvider/FilterProvider';
 
-export default function CustomSelect({ setCountries, region, setRegion }: any) {
+export default function CustomSelect() {
+  const {region, setRegion}=useFilter();
+
   const searchByRegion = (evt: any) => {
     const data = evt ? evt.target.value : evt;
     setRegion(data);
-    SearchRegionCountries(data).then(setCountries);
   };
 
   return (
@@ -40,20 +42,7 @@ export default function CustomSelect({ setCountries, region, setRegion }: any) {
         style={{ display: region ? 'block' : 'none' }}
         onClick={() => searchByRegion('')}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-4 h-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
+        <CrossSvg />
       </button>
     </div>
   );

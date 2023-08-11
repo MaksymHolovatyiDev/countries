@@ -32,3 +32,19 @@ export type CurrentCountryProfileType = {
 export type BorderCountriesBtnsType = {
   countries: string[];
 };
+
+///////////////////////////////////   interface   ////////////////////////////////
+
+export interface ThemeContextValue {
+  theme: string;
+  setTheme: any;
+}
+
+export interface FilterContextValue {
+  isLoading: boolean;
+  countries: any[];
+  filteredCountries: any[] | null;
+  setRegion: any;
+  region: string;
+  setFilteredCountries: any;
+}
